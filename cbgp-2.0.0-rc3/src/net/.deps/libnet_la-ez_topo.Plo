@@ -1,0 +1,253 @@
+libnet_la-ez_topo.lo: ez_topo.c /usr/include/stdc-predef.h \
+ ../../src/config.h /usr/include/assert.h /usr/include/features.h \
+ /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h /usr/include/string.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
+ /usr/include/xlocale.h /usr/include/x86_64-linux-gnu/bits/string.h \
+ /usr/include/x86_64-linux-gnu/bits/string2.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/string3.h ../../src/net/ez_topo.h \
+ ../../src/net/iface.h ../../src/net/error.h \
+ /usr/local/include/libgds/stream.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio2.h \
+ /usr/local/include/libgds/types.h /usr/include/inttypes.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h ../../src/net/prefix.h \
+ ../../src/net/ip.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/sigset.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/bits/select2.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h ../../src/net/ip6.h \
+ ../../src/net/net_types.h /usr/local/include/libgds/array.h \
+ /usr/local/include/libgds/enumerator.h \
+ /usr/local/include/libgds/radix-tree.h ../../src/net/link_attr.h \
+ ../../src/net/routing_t.h /usr/local/include/libgds/trie.h \
+ ../../src/sim/simulator.h ../../src/net/igp_domain.h \
+ ../../src/net/network.h ../../src/net/icmp_options.h \
+ /usr/local/include/libgds/fifo.h /usr/local/include/libgds/stack.h \
+ ../../src/net/ip_trace.h ../../src/net/routing.h ../../src/net/link.h \
+ ../../src/net/message.h /usr/local/include/libgds/memory.h \
+ /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/local/include/libgds/gds.h ../../src/net/rt_filter.h \
+ ../../src/net/net_path.h ../../src/net/node.h ../../src/net/icmp.h \
+ ../../src/net/protocol.h ../../src/net/traffic/stats.h \
+ ../../src/net/subnet.h
+
+/usr/include/stdc-predef.h:
+
+../../src/config.h:
+
+/usr/include/assert.h:
+
+/usr/include/features.h:
+
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/usr/include/string.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/x86_64-linux-gnu/bits/string.h:
+
+/usr/include/x86_64-linux-gnu/bits/string2.h:
+
+/usr/include/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
+
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap-16.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/x86_64-linux-gnu/bits/string3.h:
+
+../../src/net/ez_topo.h:
+
+../../src/net/iface.h:
+
+../../src/net/error.h:
+
+/usr/local/include/libgds/stream.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdarg.h:
+
+/usr/include/stdio.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/sys_errlist.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:
+
+/usr/local/include/libgds/types.h:
+
+/usr/include/inttypes.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h:
+
+/usr/include/limits.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
+
+../../src/net/prefix.h:
+
+../../src/net/ip.h:
+
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
+
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+
+/usr/include/x86_64-linux-gnu/sys/types.h:
+
+/usr/include/time.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigset.h:
+
+/usr/include/x86_64-linux-gnu/bits/time.h:
+
+/usr/include/x86_64-linux-gnu/bits/select2.h:
+
+/usr/include/x86_64-linux-gnu/sys/sysmacros.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib.h:
+
+../../src/net/ip6.h:
+
+../../src/net/net_types.h:
+
+/usr/local/include/libgds/array.h:
+
+/usr/local/include/libgds/enumerator.h:
+
+/usr/local/include/libgds/radix-tree.h:
+
+../../src/net/link_attr.h:
+
+../../src/net/routing_t.h:
+
+/usr/local/include/libgds/trie.h:
+
+../../src/sim/simulator.h:
+
+../../src/net/igp_domain.h:
+
+../../src/net/network.h:
+
+../../src/net/icmp_options.h:
+
+/usr/local/include/libgds/fifo.h:
+
+/usr/local/include/libgds/stack.h:
+
+../../src/net/ip_trace.h:
+
+../../src/net/routing.h:
+
+../../src/net/link.h:
+
+../../src/net/message.h:
+
+/usr/local/include/libgds/memory.h:
+
+/usr/include/errno.h:
+
+/usr/include/x86_64-linux-gnu/bits/errno.h:
+
+/usr/include/linux/errno.h:
+
+/usr/include/x86_64-linux-gnu/asm/errno.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/local/include/libgds/gds.h:
+
+../../src/net/rt_filter.h:
+
+../../src/net/net_path.h:
+
+../../src/net/node.h:
+
+../../src/net/icmp.h:
+
+../../src/net/protocol.h:
+
+../../src/net/traffic/stats.h:
+
+../../src/net/subnet.h:

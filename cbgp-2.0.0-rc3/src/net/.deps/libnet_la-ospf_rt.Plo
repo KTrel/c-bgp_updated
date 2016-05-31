@@ -1,0 +1,6 @@
+libnet_la-ospf_rt.lo: ospf_rt.c /usr/include/stdc-predef.h \
+ ../../src/config.h
+
+/usr/include/stdc-predef.h:
+
+../../src/config.h:

@@ -1,0 +1,6 @@
+libnet_la-spt_vertex.lo: spt_vertex.c /usr/include/stdc-predef.h \
+ ../../src/config.h
+
+/usr/include/stdc-predef.h:
+
+../../src/config.h:

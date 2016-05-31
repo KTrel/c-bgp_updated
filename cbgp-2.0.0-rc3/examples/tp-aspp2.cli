@@ -1,0 +1,20 @@
+#
+# Run using "cbgp -c tp-aspp.cli -DTOPO=ucla.topo"
+#
+
+require param TOPO
+require param OUTPUT
+
+bgp topology
+  load "$TOPO"
+  install
+  policies
+  run
+
+sim run
+
+bgp router AS7018 add network 0.0.0.1/32
+
+sim run
+
+bgp topology record-route 0.0.0.1/32 --output=$OUTPUT

@@ -1,0 +1,49 @@
+net add node 1.0.0.1
+net add node 1.0.0.2
+net add link 1.0.0.1 1.0.0.2
+
+net node 1.0.0.1 route add 1.0.0.2/32 --oif=1.0.0.2 1
+net node 1.0.0.2 route add 1.0.0.1/32 --oif=1.0.0.1 1
+
+bgp add router 1 1.0.0.1
+bgp router 1.0.0.1
+  add network 255/8
+  add peer 1 1.0.0.2
+  peer 1.0.0.2 up
+
+bgp add router 1 1.0.0.2
+bgp router 1.0.0.2
+  add peer 1 1.0.0.1
+  peer 1.0.0.1 up
+
+sim run
+
+print "BGP SESSION SHOULD BE ESTABLISHED\n"
+bgp router 1.0.0.1 show peers
+bgp router 1.0.0.2 show peers
+bgp router 1.0.0.1 show rib *
+bgp router 1.0.0.2 show rib *
+
+net link 1.0.0.1 1.0.0.2 down
+net link 1.0.0.2 1.0.0.1 down
+bgp router 1.0.0.1 rescan
+bgp router 1.0.0.2 rescan
+sim run
+
+print "BGP SESSION SHOULD BE ACTIVE\n"
+bgp router 1.0.0.1 show peers
+bgp router 1.0.0.2 show peers
+bgp router 1.0.0.1 show rib *
+bgp router 1.0.0.2 show rib *
+
+net link 1.0.0.1 1.0.0.2 up
+net link 1.0.0.2 1.0.0.1 up
+bgp router 1.0.0.1 rescan
+bgp router 1.0.0.2 rescan
+sim run
+
+print "BGP SESSION SHOULD BE ESTABLISHED\n"
+bgp router 1.0.0.1 show peers
+bgp router 1.0.0.2 show peers
+bgp router 1.0.0.1 show rib *
+bgp router 1.0.0.2 show rib *

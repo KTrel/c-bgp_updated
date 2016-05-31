@@ -1,0 +1,5 @@
+libnet_la-ospf.lo: ospf.c /usr/include/stdc-predef.h ../../src/config.h
+
+/usr/include/stdc-predef.h:
+
+../../src/config.h:

@@ -1,0 +1,10 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libcsim
+Description: BGP routing solver library 
+Version: 2.0.0-rc3
+Libs: -L${libdir} -lcsim
+Cflags: -I${includedir}
