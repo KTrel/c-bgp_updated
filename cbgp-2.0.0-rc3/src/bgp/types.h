@@ -50,7 +50,7 @@
 
 // -----[ asn_t ]----------------------------------------------------
 /** Maximum number of AS. */
-#define MAX_AS 65536
+#define MAX_AS 4294967296
 /** Definition of an AS Number (ASN). */
 typedef uint16_t asn_t;
 
@@ -148,7 +148,7 @@ typedef struct bgp_peer_t {
   /** AS Number (ASN) of the neighbor. */
   uint16_t              asn;
   /** Reference to the local router (owner). */
-  struct bgp_router_t * router;    
+  struct bgp_router_t * router;
   /* Configuration flags. */
   uint8_t               flags;
   /* Router-ID of the neighbor.
@@ -159,13 +159,13 @@ typedef struct bgp_peer_t {
   /** Input and output filters. */
   struct bgp_filter_t * filter[FILTER_MAX];
   /** Input and output Adjacent Routing Information Bases (Adj-RIBs). */
-  bgp_rib_t           * adj_rib[RIB_MAX];    
+  bgp_rib_t           * adj_rib[RIB_MAX];
   /** Session state (handled by the FSM). */
   bgp_peer_state_t      session_state;
   /** Optional next-hop to advertise to this peer. */
   net_addr_t            next_hop;
   /** Optional source IP address. */
-  net_addr_t            src_addr; 
+  net_addr_t            src_addr;
   /** "TCP" send sequence number. */
   unsigned int          send_seq_num;
   /** "TCP" receive sequence number. */
@@ -235,7 +235,7 @@ typedef struct bgp_route_t {
 #ifdef __BGP_ROUTE_INFO_DP__
   /** How the route was selected (meaningful only if the route is
    *  currently best). */
-  uint8_t             rank;   
+  uint8_t             rank;
 #endif
 
 #ifdef __EXPERIMENTAL__
