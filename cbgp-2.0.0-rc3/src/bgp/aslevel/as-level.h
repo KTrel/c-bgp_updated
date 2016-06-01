@@ -108,7 +108,7 @@ extern "C" {
   void aslevel_topo_destroy(as_level_topo_t ** topo);
   // -----[ aslevel_topo_add_as ]------------------------------------
   as_level_domain_t * aslevel_topo_add_as(as_level_topo_t * topo,
-					  uint16_t asn);
+					  asn_t asn);
 
   // -----[ aslevel_topo_remove_as ]---------------------------------
   /** Remove an ASN from the topology.
@@ -121,7 +121,7 @@ extern "C" {
 
   // -----[ aslevel_top_get_as ]-------------------------------------
   as_level_domain_t *  aslevel_topo_get_as(as_level_topo_t * topo,
-					   uint16_t asn);
+					   asn_t asn);
   // -----[ aslevel_as_num_providers ]-------------------------------
   unsigned int aslevel_as_num_providers(as_level_domain_t * domain);
   // -----[ aslevel_as_add_link ]------------------------------------
@@ -208,9 +208,9 @@ extern "C" {
   // -----[ aslevel_str2addr_sch ]-----------------------------------
   int aslevel_str2addr_sch(const char * str, uint8_t * addr_scheme);
   // -----[ aslevel_addr_sch_default_get ]---------------------------
-  net_addr_t aslevel_addr_sch_default_get(uint16_t asn);
+  net_addr_t aslevel_addr_sch_default_get(asn_t asn);
   // -----[ aslevel_addr_sch_local_get ]-----------------------------
-  net_addr_t aslevel_addr_sch_local_get(uint16_t asn);
+  net_addr_t aslevel_addr_sch_local_get(asn_t asn);
 
 
   ///////////////////////////////////////////////////////////////////

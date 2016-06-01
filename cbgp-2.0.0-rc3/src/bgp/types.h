@@ -52,7 +52,7 @@
 /** Maximum number of AS. */
 #define MAX_AS 4294967296
 /** Definition of an AS Number (ASN). */
-typedef uint16_t asn_t;
+typedef uint32_t asn_t;
 
 // -----[ bgp_routes_t ]---------------------------------------------
 /** Definition of a set of BGP routes. */

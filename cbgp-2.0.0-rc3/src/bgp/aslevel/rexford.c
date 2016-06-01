@@ -87,26 +87,26 @@ int rexford_parser(FILE * file, as_level_topo_t * topo,
 
   // Parse input file
   tokenizer= tokenizer_create(" \t", NULL, NULL);
-  
+
   while ((!feof(file)) && (!error)) {
     if (fgets(line, sizeof(line), file) == NULL)
       break;
     (*line_number)++;
-    
+
     // Skip comments starting with '#'
     if (line[0] == '#')
       continue;
-    
+
     if (tokenizer_run(tokenizer, line) != TOKENIZER_SUCCESS) {
       error= ASLEVEL_ERROR_UNEXPECTED;
       break;
     }
-    
+
     tokens= tokenizer_get_tokens(tokenizer);
-    
+
     // Set default value for optional parameters
     delay= 0;
-    
+
     // Get and check mandatory parameters
     if (tokens_get_num(tokens) < 3) {
       error= ASLEVEL_ERROR_NUM_PARAMS;
@@ -119,14 +119,14 @@ int rexford_parser(FILE * file, as_level_topo_t * topo,
       error= ASLEVEL_ERROR_INVALID_ASNUM;
       break;
     }
-    
+
     // Get and check business relationship
     if ((tokens_get_uint_at(tokens, 2, &relation) != 0) ||
 	(_rexford_relation_to_peer_type(relation, &peer_type) != 0)) {
       error= ASLEVEL_ERROR_INVALID_RELATION;
       break;
     }
-    
+
     // Get optional parameters
     if (tokens_get_num(tokens) > 3) {
       if (str2delay(tokens_get_string_at(tokens, 3), &delay)) {
@@ -134,7 +134,7 @@ int rexford_parser(FILE * file, as_level_topo_t * topo,
 	break;
       }
     }
-    
+
     // Limit number of parameters
     if (tokens_get_num(tokens) > 4) {
       STREAM_ERR(STREAM_LEVEL_SEVERE,
@@ -143,21 +143,21 @@ int rexford_parser(FILE * file, as_level_topo_t * topo,
       error= ASLEVEL_ERROR_NUM_PARAMS;
       break;
     }
-    
+
     // Add/get domain 1
     if (!(domain1= aslevel_topo_get_as(topo, asn1)) &&
 	!(domain1= aslevel_topo_add_as(topo, asn1))) {
       error= ASLEVEL_ERROR_UNEXPECTED;
       break;
     }
-    
+
     // Add/get domain 2
     if (!(domain2= aslevel_topo_get_as(topo, asn2)) &&
 	!(domain2= aslevel_topo_add_as(topo, asn2))) {
       error= ASLEVEL_ERROR_UNEXPECTED;
       break;
     }
-    
+
     // Add link in both directions
     error= aslevel_as_add_link(domain1, domain2, peer_type, NULL);
     if (error != ASLEVEL_SUCCESS)
@@ -166,7 +166,7 @@ int rexford_parser(FILE * file, as_level_topo_t * topo,
     error= aslevel_as_add_link(domain2, domain1, peer_type, NULL);
     if (error != ASLEVEL_SUCCESS)
       break;
-    
+
   }
 
   tokenizer_destroy(&tokenizer);

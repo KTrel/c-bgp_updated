@@ -119,7 +119,7 @@ static void _aslevel_as_destroy_link(void * item, const void * ctx)
 }
 
 // -----[ _aslevel_as_create ]---------------------------------------
-static inline as_level_domain_t * _aslevel_as_create(uint16_t asn)
+static inline as_level_domain_t * _aslevel_as_create(asn_t asn)
 {
   as_level_domain_t * domain= MALLOC(sizeof(as_level_domain_t));
   domain->asn= asn;
@@ -273,7 +273,7 @@ static inline void _aslevel_topo_cache_update_as(as_level_topo_t * topo,
 // -----[ _aslevel_topo_cache_lookup_as ]----------------------------
 static inline
 as_level_domain_t * _aslevel_topo_cache_lookup_as(as_level_topo_t * topo,
-						  uint16_t asn)
+						  asn_t asn)
 {
   unsigned int index;
 
@@ -339,7 +339,7 @@ unsigned int aslevel_topo_num_edges(as_level_topo_t * topo)
 }
 
 // -----[ aslevel_topo_add_as ]------------------------------------
-as_level_domain_t * aslevel_topo_add_as(as_level_topo_t * topo, uint16_t asn)
+as_level_domain_t * aslevel_topo_add_as(as_level_topo_t * topo, asn_t asn)
 {
   as_level_domain_t * domain= _aslevel_as_create(asn);
   if (ptr_array_add(topo->domains, &domain) < 0) {
@@ -390,7 +390,7 @@ int aslevel_topo_remove_as(as_level_topo_t * topo, asn_t asn)
 
 // -----[ aslevel_topo_get_as ]--------------------------------------
 as_level_domain_t * aslevel_topo_get_as(as_level_topo_t * topo,
-					uint16_t asn)
+					asn_t asn)
 {
   as_level_domain_t dummy_domain= { .asn= asn };
   as_level_domain_t * domain;
@@ -788,7 +788,7 @@ int aslevel_topo_check_consistency(as_level_topo_t * topo)
 
 // -----[ _aslevel_build_bgp_router ]--------------------------------
 static inline bgp_router_t * _aslevel_build_bgp_router(net_addr_t addr,
-						       uint16_t asn)
+						       asn_t asn)
 {
   net_node_t * node;
   bgp_router_t * router= NULL;
@@ -1384,7 +1384,7 @@ int aslevel_str2addr_sch(const char * pcStr, uint8_t * puAddrScheme)
  * where ASNH is composed of the 8 most significant bits of the ASN
  * while ASNL is composed of the 8 less significant bits of the ASN.
  */
-net_addr_t aslevel_addr_sch_default_get(uint16_t asn)
+net_addr_t aslevel_addr_sch_default_get(asn_t asn)
 {
   return (asn << 16);
 }
@@ -1399,7 +1399,7 @@ net_addr_t aslevel_addr_sch_default_get(uint16_t asn)
  * where ASNH is composed of the 8 most significant bits of the ASN
  * while ASNL is composed of the 8 less significant bits of the ASN.
  */
-net_addr_t aslevel_addr_sch_local_get(uint16_t asn)
+net_addr_t aslevel_addr_sch_local_get(asn_t asn)
 {
   return asn;
 }
