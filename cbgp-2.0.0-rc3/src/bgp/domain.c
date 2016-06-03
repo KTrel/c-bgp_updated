@@ -38,7 +38,7 @@
 #include <net/icmp.h>
 #include <net/network.h>
 
-#define BGP_DOMAINS_MAX 65536
+#define BGP_DOMAINS_MAX 500000
 static bgp_domain_t * _domains[BGP_DOMAINS_MAX];
 
 // ----- bgp_domain_create ------------------------------------------
@@ -183,7 +183,7 @@ static int _record_route_for_each(uint32_t key, uint8_t key_len,
 {
   net_node_t * node = ((bgp_router_t *)item)->node;
   _record_route_ctx_t * rr_ctx = (_record_route_ctx_t *) ctx;
-  
+
   icmp_record_route(rr_ctx->stream, node, IP_ADDR_ANY, rr_ctx->dest,
 		    0, rr_ctx->opts);
   return 0;
@@ -194,7 +194,7 @@ static int _record_route_for_each(uint32_t key, uint8_t key_len,
  *
  */
 int bgp_domain_record_route(gds_stream_t * stream,
-			    bgp_domain_t * domain, 
+			    bgp_domain_t * domain,
 			    ip_dest_t dest,
 			    ip_opt_t * opts)
 {
@@ -215,9 +215,9 @@ static int _build_router_list(uint32_t key, uint8_t key_len,
 {
   ptr_array_t * list= (ptr_array_t *) ctx;
   bgp_router_t * router= (bgp_router_t *) item;
-  
+
   ptr_array_append(list, router);
-  
+
   return 0;
 }
 
